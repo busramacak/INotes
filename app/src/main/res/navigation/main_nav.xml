@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.bmprj.inotes.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/fragment_menu"/>
+
+    <fragment
+        android:id="@+id/searchhFragment"
+        android:name="com.bmprj.inotes.SearchhFragment"
+        android:label="SearchhFragment"
+        tools:layout="@layout/fragment_searchh">
+        <action
+            android:id="@+id/searchGoToMenu"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.bmprj.inotes.AddNoteFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add_note" >
+        <action
+            android:id="@+id/noteGoToMenu"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addCheckListFragment"
+        android:name="com.bmprj.inotes.AddCheckListFragment"
+        android:label="fragment_add_check_list"
+        tools:layout="@layout/fragment_add_check_list" />
+
+</navigation>

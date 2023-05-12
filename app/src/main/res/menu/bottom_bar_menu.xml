@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuFragment"
+        android:icon="@drawable/menuicon"
+        android:title="" />
+    <item
+        android:id="@+id/searchhFragment"
+        android:icon="@drawable/araicon"
+        android:title=""/>
+
+    <item
+        android:id="@+id/favoriteFragment"
+        android:icon="@drawable/fav_empty"
+        android:title=""/>
+
+    <item
+        android:id="@+id/addNoteFragment"
+        android:icon="@drawable/add_note1"
+        android:title=""/>
+
+    <item
+        android:id="@+id/addCheckListFragment"
+        android:icon="@drawable/check_list"
+        android:title=""/>
+</menu>
