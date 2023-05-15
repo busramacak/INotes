@@ -1,7 +1,6 @@
 package com.bmprj.inotes
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bmprj.inotes.databinding.NotesLayoutBinding
@@ -10,7 +9,7 @@ class MenuAdapter(private val list:ArrayList<Note>) : RecyclerView.Adapter<MenuA
 
     class ViewHolder(private val binding:NotesLayoutBinding):
         RecyclerView.ViewHolder(binding.root){
-            fun bind(note:Note?){
+            fun bind(note: Note?){
                 binding.note=note
                 binding.executePendingBindings()
 

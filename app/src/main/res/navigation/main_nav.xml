@@ -30,11 +30,10 @@
             android:id="@+id/noteGoToMenu"
             app:destination="@id/menuFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/addCheckListFragment"
         android:name="com.bmprj.inotes.AddCheckListFragment"
-        android:label="fragment_add_check_list"
-        tools:layout="@layout/fragment_add_check_list" />
+        android:label="AddCheckListFragment"
+        tools:layout="@layout/fragment_add_check_list"/>
 
 </navigation>

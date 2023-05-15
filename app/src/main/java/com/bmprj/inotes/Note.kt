@@ -1,3 +1,3 @@
 package com.bmprj.inotes
 
-data class Note(var title:String, var date:String)
+data class Note(var note_title:String,var note:String, var note_date:String)

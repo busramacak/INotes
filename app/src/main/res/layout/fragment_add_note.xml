@@ -31,6 +31,7 @@
                 android:src="@drawable/back" />
 
             <EditText
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -45,6 +46,7 @@
         </androidx.appcompat.widget.Toolbar>
 
         <EditText
+            android:id="@+id/noteEdTxt"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@null"
