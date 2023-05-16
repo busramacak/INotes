@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bmprj.inotes.databinding.FragmentMenuBinding
+import com.bmprj.inotes.databinding.FragmentNoteBinding
 
 
-class MenuFragment : Fragment() {
+class NoteFragment : Fragment() {
 
-    private lateinit var binding:FragmentMenuBinding
+    private lateinit var binding: FragmentNoteBinding
 
 
     override fun onCreateView(
@@ -20,8 +20,9 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding=DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false)
-        binding.menuDesign=this
+        binding=DataBindingUtil.inflate(inflater, R.layout.fragment_note, container, false)
+        binding.noteDesign=this
+
         return binding.root
     }
 
@@ -38,7 +39,7 @@ class MenuFragment : Fragment() {
         binding.recyV.apply{
             layoutManager = GridLayoutManager(context,2)
             binding.recyV.layoutManager=layoutManager
-            adapter = MenuAdapter(list)
+            adapter = NoteAdapter(list)
             binding.recyV.adapter=adapter
         }
     }

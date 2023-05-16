@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             if(nd.id == R.id.searchhFragment || nd.id== R.id.addNoteFragment){
                 binding.bottomNav.visibility= View.GONE
             }
-            else if(nd.id == R.id.menuFragment ){
+            else if(nd.id == R.id.noteFragment || nd.id == R.id.favNotesFragment){
                 binding.bottomNav.visibility=View.VISIBLE
 
             }

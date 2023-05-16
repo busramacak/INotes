@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/menuFragment">
-
-    <fragment
-        android:id="@+id/menuFragment"
-        android:name="com.bmprj.inotes.MenuFragment"
-        android:label="MenuFragment"
-        tools:layout="@layout/fragment_menu"/>
+    app:startDestination="@id/noteFragment">
 
     <fragment
         android:id="@+id/searchhFragment"
@@ -17,8 +11,8 @@
         android:label="SearchhFragment"
         tools:layout="@layout/fragment_searchh">
         <action
-            android:id="@+id/searchGoToMenu"
-            app:destination="@id/menuFragment" />
+            android:id="@+id/searchhGoToNote"
+            app:destination="@id/noteFragment" />
     </fragment>
 
     <fragment
@@ -27,13 +21,54 @@
         android:label="fragment_add"
         tools:layout="@layout/fragment_add_note" >
         <action
-            android:id="@+id/noteGoToMenu"
-            app:destination="@id/menuFragment" />
+            android:id="@+id/addNoteGoToNote"
+            app:destination="@id/noteFragment"
+            app:popUpTo="@id/addNoteFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/addNoteGoToFavNote"
+            app:destination="@+id/favNotesFragment"/>
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue=""/>
+        <argument
+            android:name="note"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue=""/>
+        <action
+            android:id="@+id/action_addNoteFragment_pop"
+            app:popUpTo="@id/addNoteFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+
     <fragment
         android:id="@+id/addCheckListFragment"
         android:name="com.bmprj.inotes.AddCheckListFragment"
         android:label="AddCheckListFragment"
         tools:layout="@layout/fragment_add_check_list"/>
+
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.bmprj.inotes.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note">
+        <action
+            android:id="@+id/noteGoToAddNote"
+            app:destination="@+id/addNoteFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/favNotesFragment"
+        android:name="com.bmprj.inotes.FavNotesFragment"
+        android:label="fragment_fav_notes"
+        tools:layout="@layout/fragment_fav_notes">
+
+        <action
+            android:id="@+id/noteGoToAddNote"
+            app:destination="@+id/addNoteFragment" />
+    </fragment>
 
 </navigation>

@@ -25,8 +25,14 @@ class SearchhFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+    }
+
     fun backClick(view:View){
-       Navigation.findNavController(view).navigate(R.id.searchGoToMenu)
+       Navigation.findNavController(view).navigate(R.id.searchhGoToNote)
     }
 
 
