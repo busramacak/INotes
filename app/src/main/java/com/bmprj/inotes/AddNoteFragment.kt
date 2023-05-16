@@ -38,7 +38,7 @@ class AddNoteFragment : Fragment() {
         title=binding.title.text.toString()
         noteEdTxt=binding.noteEdTxt.text.toString()
         val dh = DataBaseHelper(requireContext())
-        NotesDAO().addNotes(dh,title,noteEdTxt,current)
+        NotesDAO().addNotes(dh,title,noteEdTxt,current,0)
 
         Navigation.findNavController(view).navigate(R.id.noteGoToMenu)
     }

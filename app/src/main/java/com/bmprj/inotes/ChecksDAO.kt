@@ -25,6 +25,14 @@ class ChecksDAO {
         db.close()
     }
 
+    fun deleteChecks(dh:DataBaseHelper,check_text: String){
+        val db = dh.writableDatabase
+
+        db.delete("Checks","check_text=?", arrayOf(check_text))
+        db.close()
+
+    }
+
     @SuppressLint("Range")
     fun getChecks(dh:DataBaseHelper):ArrayList<Check>{
         val checkList = ArrayList<Check>()
