@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +19,7 @@ import com.bmprj.inotes.databinding.FragmentAddCheckListBinding
 class AddCheckListFragment : Fragment() {
 
     private lateinit var binding: FragmentAddCheckListBinding
-
+    var list = ArrayList<Check>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,17 +45,31 @@ class AddCheckListFragment : Fragment() {
         alertDialog.show()
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activity?.onBackPressedDispatcher?.addCallback(this,object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                Navigation.findNavController(binding.root).navigate(R.id.noteFragment)
+            }
+        })
+    }
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val dh = DataBaseHelper(requireContext())
         val checkList = ChecksDAO().getChecks(dh)
-        var list = ArrayList<Check>()
+
 
         for(i in checkList){
             list.add(i)
+        }
+
+        if(!list.isEmpty()){
+            binding.checkTxt.text=""
         }
 
         binding.recyVToDo.apply {
@@ -63,6 +78,7 @@ class AddCheckListFragment : Fragment() {
             adapter=CheckAdapter(list)
             binding.recyVToDo.adapter=adapter
         }
+
     }
 
 }

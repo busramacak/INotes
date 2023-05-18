@@ -5,14 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bmprj.inotes.databinding.FragmentFavNotesBinding
 
 
 class FavNotesFragment : Fragment() {
     private lateinit var binding:FragmentFavNotesBinding
-
+    val list = ArrayList<Note>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -23,22 +25,35 @@ class FavNotesFragment : Fragment() {
         return binding.root
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activity?.onBackPressedDispatcher?.addCallback(this,object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                Navigation.findNavController(binding.root).navigate(R.id.noteFragment)
+            }
+        })
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val dh = DataBaseHelper(requireContext())
         val favNoteList = NotesDAO().getNotes(dh)
-        val list = ArrayList<Note>()
+
         for(i in favNoteList){
             if(i.note_fav==1){
                 list.add(i)
             }
         }
 
+        if(!list.isEmpty()){
+            binding.favTxt.text=""
+        }
+
         binding.recyVFav.apply {
             layoutManager=GridLayoutManager(context,2)
             binding.recyVFav.layoutManager=layoutManager
-            adapter=NoteAdapter(list)
+            adapter=FavAdapter(list)
             binding.recyVFav.adapter=adapter
         }
     }

@@ -13,12 +13,12 @@
 
     <item
         android:id="@+id/favNotesFragment"
-        android:icon="@drawable/fav_empty"
+        android:icon="@drawable/fav"
         android:title=""/>
 
     <item
         android:id="@+id/addNoteFragment"
-        android:icon="@drawable/add_note1"
+        android:icon="@drawable/add"
         android:title=""/>
 
     <item

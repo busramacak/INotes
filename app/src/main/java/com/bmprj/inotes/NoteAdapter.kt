@@ -1,7 +1,6 @@
 package com.bmprj.inotes
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -21,23 +20,24 @@ class NoteAdapter (private val list:ArrayList<Note>)
 
             binding.favoriCardV.setOnClickListener{
                 if(binding.favoriCardV.isChecked){
-                    NotesDAO().updateFav(dh,binding.title.text.toString(),1)
+                    NotesDAO().updateFav(dh,binding.note?.note_id?.toInt(),1)
                 }
                 else if(!binding.favoriCardV.isChecked){
-                    NotesDAO().updateFav(dh,binding.title.text.toString(),0)
+                    NotesDAO().updateFav(dh,binding.note?.note_id?.toInt(),0)
                 }
                 Navigation.findNavController(itemView).navigate(R.id.noteFragment)
             }
 
             binding.deleteCardV.setOnClickListener{
-                NotesDAO().deleteNotes(dh,binding.title.text.toString())
+                NotesDAO().deleteNotes(dh,binding.note?.note_id?.toInt())
                 Navigation.findNavController(itemView).navigate(R.id.noteFragment)
             }
 
             binding.noteCardV.setOnClickListener{
-                val title = binding.title?.text.toString()
+                val note_id = binding.note?.note_id.toString()
+                val note_title = binding.note?.note_title
                 val note = binding.note?.note
-                val gecis = NoteFragmentDirections.noteGoToAddNote(title,note)
+                val gecis = NoteFragmentDirections.noteGoToAddNote(note_id,note_title,note)
                 Navigation.findNavController(itemView).navigate(gecis)
             }
         }

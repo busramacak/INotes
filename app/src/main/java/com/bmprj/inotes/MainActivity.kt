@@ -1,20 +1,15 @@
 package com.bmprj.inotes
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
-import android.widget.EditText
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.bmprj.inotes.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -30,10 +25,11 @@ class MainActivity : AppCompatActivity() {
 
 
         navHostFragment.navController.addOnDestinationChangedListener{_, nd: NavDestination, _ ->
-            if(nd.id == R.id.searchhFragment || nd.id== R.id.addNoteFragment){
+            if( nd.id== R.id.addNoteFragment || nd.id == R.id.searchhFragment){
                 binding.bottomNav.visibility= View.GONE
+
             }
-            else if(nd.id == R.id.noteFragment || nd.id == R.id.favNotesFragment){
+            else if(nd.id == R.id.noteFragment || nd.id == R.id.favNotesFragment ){
                 binding.bottomNav.visibility=View.VISIBLE
 
             }

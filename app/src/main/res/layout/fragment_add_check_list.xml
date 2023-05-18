@@ -19,6 +19,8 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar4"
             app:title="To-Do List"
+            app:titleTextColor="@color/white"
+            android:background="@color/toolbarColor"
             app:titleMarginStart="155dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,7 +45,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:onClick="@{(v)->addCheckListDesign.floatBtnClick(v)}"
             android:layout_margin="20dp"
-            android:src="@drawable/add_note1"/>
+            app:backgroundTint="@color/red"
+            app:tint="@color/white"
+            android:src="@drawable/add"/>
+
+        <TextView
+            android:id="@+id/check_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to-do hasn't been added yet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

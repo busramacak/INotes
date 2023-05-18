@@ -13,7 +13,7 @@
         android:id="@+id/checkCardV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="1dp"
         android:background="@drawable/cardv_cerceve">
 
         <LinearLayout
@@ -28,7 +28,7 @@
                 android:layout_weight="90"
                 android:text="@{check.check_text.toString(), default=DataBinding}"
                 android:checked="@{check.is_checked == 1 ? true : false, default=false}"
-                android:textColor="@{check.is_checked() == 1 ? @color/red : @color/black}"/>
+                android:textColor="@{check.is_checked() == 1 ? @color/checkedColor : @color/black}"/>
 
             <ImageView
                 android:id="@+id/deleteCheck"

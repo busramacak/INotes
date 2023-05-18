@@ -1,10 +1,12 @@
 package com.bmprj.inotes
 
-import android.R
-import android.app.AlertDialog
+import android.R.string
+import android.text.Spanned
+import android.text.style.StrikethroughSpan
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.toSpannable
+import androidx.core.text.toSpanned
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bmprj.inotes.databinding.CheckListLayoutBinding
@@ -21,18 +23,20 @@ class CheckAdapter(private val list:ArrayList<Check>) : RecyclerView.Adapter<Che
 
                     binding.checkBox.setOnClickListener{
                         if(binding.checkBox.isChecked==true){
-                            ChecksDAO().updateChecks(db,binding.checkBox.text.toString(),1)
+
+                            ChecksDAO().updateChecks(db,binding.check?.check_id?.toInt(),1)
 
 
                         }
                         else if(binding.checkBox.isChecked==false){
-                            ChecksDAO().updateChecks(db,binding.checkBox.text.toString(),0)
+
+                            ChecksDAO().updateChecks(db,binding.check?.check_id?.toInt(),0)
                         }
                         Navigation.findNavController(itemView).navigate(com.bmprj.inotes.R.id.addCheckListFragment)
                     }
 
                     binding.deleteCheck.setOnClickListener{
-                        ChecksDAO().deleteChecks(db,binding.checkBox.text.toString())
+                        ChecksDAO().deleteChecks(db,binding.check?.check_id?.toInt())
                         Navigation.findNavController(itemView).navigate(com.bmprj.inotes.R.id.addCheckListFragment)
                     }
 

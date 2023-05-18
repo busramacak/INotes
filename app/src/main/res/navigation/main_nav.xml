@@ -10,9 +10,11 @@
         android:name="com.bmprj.inotes.SearchhFragment"
         android:label="SearchhFragment"
         tools:layout="@layout/fragment_searchh">
+
         <action
-            android:id="@+id/searchhGoToNote"
-            app:destination="@id/noteFragment" />
+            android:id="@+id/action_searchhFragment_pop"
+            app:popUpTo="@id/searchhFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -29,19 +31,20 @@
             android:id="@+id/addNoteGoToFavNote"
             app:destination="@+id/favNotesFragment"/>
         <argument
-            android:name="title"
+            android:name="note_id"
             app:argType="string"
             app:nullable="true"
             android:defaultValue=""/>
+        <argument
+            android:name="note_title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="" />
         <argument
             android:name="note"
             app:argType="string"
             app:nullable="true"
             android:defaultValue=""/>
-        <action
-            android:id="@+id/action_addNoteFragment_pop"
-            app:popUpTo="@id/addNoteFragment"
-            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -65,7 +68,6 @@
         android:name="com.bmprj.inotes.FavNotesFragment"
         android:label="fragment_fav_notes"
         tools:layout="@layout/fragment_fav_notes">
-
         <action
             android:id="@+id/noteGoToAddNote"
             app:destination="@+id/addNoteFragment" />

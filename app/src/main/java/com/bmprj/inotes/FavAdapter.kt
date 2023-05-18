@@ -20,23 +20,24 @@ class FavAdapter(private val list:ArrayList<Note>)
 
                     binding.favoriCardV.setOnClickListener{
                         if(binding.favoriCardV.isChecked){
-                            NotesDAO().updateFav(dh,binding.title.text.toString(),1)
+                            NotesDAO().updateFav(dh,binding.note?.note_id?.toInt(),1)
                         }
                         else if(!binding.favoriCardV.isChecked){
-                            NotesDAO().updateFav(dh,binding.title.text.toString(),0)
+                            NotesDAO().updateFav(dh,binding.note?.note_id?.toInt(),0)
                         }
                         Navigation.findNavController(itemView).navigate(R.id.favNotesFragment)
                     }
 
                     binding.deleteCardV.setOnClickListener{
-                        NotesDAO().deleteNotes(dh,binding.title.text.toString())
+                        NotesDAO().deleteNotes(dh,binding.note?.note_id?.toInt())
                         Navigation.findNavController(itemView).navigate(R.id.favNotesFragment)
                     }
 
                     binding.noteCardV.setOnClickListener{
-                        val title = binding.title?.text.toString()
+                        val note_id=binding.note?.note_id
+                        val title = binding.note?.note_title
                         val note = binding.note?.note
-                        val gecis = FavNotesFragmentDirections.noteGoToAddNote(title,note)
+                        val gecis = FavNotesFragmentDirections.noteGoToAddNote(note_id,title,note)
                         Navigation.findNavController(itemView).navigate(gecis)
                     }
                 }
