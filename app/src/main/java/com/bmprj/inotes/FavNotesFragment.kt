@@ -51,7 +51,7 @@ class FavNotesFragment : Fragment() {
         }
 
         binding.recyVFav.apply {
-            layoutManager=GridLayoutManager(context,2)
+            layoutManager=GridLayoutManager(context,resources.getInteger(R.integer.grid_column_count))
             binding.recyVFav.layoutManager=layoutManager
             adapter=FavAdapter(list)
             binding.recyVFav.adapter=adapter

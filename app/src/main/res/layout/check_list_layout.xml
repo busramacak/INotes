@@ -16,28 +16,35 @@
         android:layout_margin="1dp"
         android:background="@drawable/cardv_cerceve">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <CheckBox
                 android:id="@+id/checkBox"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="90"
-                android:text="@{check.check_text.toString(), default=DataBinding}"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toStartOf="@+id/deleteCheck"
                 android:checked="@{check.is_checked == 1 ? true : false, default=false}"
-                android:textColor="@{check.is_checked() == 1 ? @color/checkedColor : @color/black}"/>
+                android:text="@{check.check_text.toString(), default=DataBinding}"
+                android:textColor="@{check.is_checked() == 1 ? @color/checkedColor : @color/black}" />
 
             <ImageView
                 android:id="@+id/deleteCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:layout_gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="10dp"
                 android:src="@drawable/delete"/>
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 </layout>

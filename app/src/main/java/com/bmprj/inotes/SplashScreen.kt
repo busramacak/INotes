@@ -15,10 +15,11 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         cs.launch {
-            delay(1000)
+            delay(3000)
             startActivity(Intent(this@SplashScreen,MainActivity::class.java))
             finish()
         }
+
     }
 
     override fun onPause() {

@@ -17,7 +17,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            app:title="I NOTES"
+            app:title="Notes"
             app:titleTextColor="@color/white"
             app:titleMarginStart="165dp"
             android:background="@color/toolbarColor"

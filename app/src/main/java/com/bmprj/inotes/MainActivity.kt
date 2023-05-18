@@ -1,6 +1,7 @@
 package com.bmprj.inotes
 
 import android.app.Activity
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -27,13 +28,10 @@ class MainActivity : AppCompatActivity() {
         navHostFragment.navController.addOnDestinationChangedListener{_, nd: NavDestination, _ ->
             if( nd.id== R.id.addNoteFragment || nd.id == R.id.searchhFragment){
                 binding.bottomNav.visibility= View.GONE
-
             }
             else if(nd.id == R.id.noteFragment || nd.id == R.id.favNotesFragment ){
                 binding.bottomNav.visibility=View.VISIBLE
-
             }
-
         }
 
 

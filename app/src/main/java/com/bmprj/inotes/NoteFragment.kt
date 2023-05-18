@@ -1,5 +1,6 @@
 package com.bmprj.inotes
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ class NoteFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteBinding
     val list = ArrayList<Note>()
+    var spanCount:Int=2
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -32,6 +34,7 @@ class NoteFragment : Fragment() {
         list.clear()
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val dh = DataBaseHelper(requireContext())
@@ -47,8 +50,10 @@ class NoteFragment : Fragment() {
         }
 
 
+
+
         binding.recyV.apply{
-            layoutManager = GridLayoutManager(context,2)
+            layoutManager = GridLayoutManager(context,resources.getInteger(R.integer.grid_column_count))
             binding.recyV.layoutManager=layoutManager
             adapter = NoteAdapter(list)
             binding.recyV.adapter=adapter
