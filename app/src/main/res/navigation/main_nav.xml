@@ -15,6 +15,9 @@
             android:id="@+id/action_searchhFragment_pop"
             app:popUpTo="@id/searchhFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/noteGoToAddNote"
+            app:destination="@+id/addNoteFragment"/>
     </fragment>
 
     <fragment
