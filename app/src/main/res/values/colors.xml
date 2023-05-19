@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources >
     <color name="purple_200">#0097A7</color>
-    <color name="purple_500">#26C6DA</color>
     <color name="purple_700">#26C6DA</color>
     <color name="toolbarColor">#0097A7</color>
     <color name="teal_200">#00BCD4</color>
