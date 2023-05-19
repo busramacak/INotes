@@ -43,9 +43,7 @@
                 android:onQueryTextChange="@{() -> searchDesign.onQueryChange(searchView.getQuery().toString())}"
                 android:queryHint="Search Notes"
                 android:searchHintIcon="@null"
-                android:searchIcon="@null"
-                tools:layout_editor_absoluteX="353dp"
-                tools:layout_editor_absoluteY="4dp" />
+                android:searchIcon="@null" />
 
 
         </androidx.appcompat.widget.Toolbar>

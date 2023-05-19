@@ -11,7 +11,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/noteCardV"
-        android:background="@drawable/cardv_cerceve"
+        android:backgroundTint="@color/card_color"
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:layout_margin="13dp">
@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:textColor="@color/textColor"
                 android:text="@{note.note_title, default = DataBinding}"
                 android:textSize="20sp"
                 android:textStyle="bold" />
