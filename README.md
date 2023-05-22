@@ -9,7 +9,7 @@ Features:
 
 Pages:
 + [Splash Page](#splash-page)
-+ [Notes & Add Note Pages](#notes/add-note-pages)
++ [Notes/Add Note Pages](#notes/add-note-pages)
 + [Search Page](#search-page)
 + [Favorites Page](#favorites-page)
 + To-Do Page
