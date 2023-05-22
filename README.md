@@ -8,7 +8,7 @@ Features:
 + Notes,Favorites,Add note, search, to-do screens are using Navigation Component.
 
 Pages:
-+ [Splash Page](Splash Page)
++ [Splash Page](#-splash-page)
 + Notes & Add Note Pages
 + Search Page
 + Favorites Page
