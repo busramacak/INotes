@@ -9,7 +9,7 @@ Features:
 
 Pages:
 + [Splash Page](#splash-page)
-+ [Notes & Add Note Pages](#notes-&-add-note-pages)
++ [Notes & Add Note Pages](#notes/add-note-pages)
 + [Search Page](#search-page)
 + [Favorites Page](#favorites-page)
 + To-Do Page
@@ -18,7 +18,7 @@ Pages:
 ## Splash Page
 <img width="250" src="https://github.com/busramacak/INotes/assets/115944594/879f0401-a868-4d0e-b76b-5023b54a1438" />
 
-## Notes & Add Note Pages
+## Notes/Add Note Pages
 <img width="250" src="https://github.com/busramacak/INotes/assets/115944594/8852275d-54a0-46c8-9ca4-211b9282a1d1" />
 
 ## Search Page
