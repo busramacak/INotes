@@ -4,7 +4,7 @@ I NOTES is an note and to-do list application written in Kotlin, prepared with S
 
 Features:
 + Made with SQlite, Lottie, DataBinding, MVVM architecture, Splash Screen, Recyclerview, Navigation Component(NavGraph, BottomNav), SearchView, Lottie.
-
++ Compatible with portrait mode and landspace mode, dark and light mode.
 + Notes,Favorites,Add note, search, to-do screens are using Navigation Component.
 
 ## Pages:
