@@ -15,18 +15,18 @@ Features:
 + [To-Do Page:heavy_check_mark:](#to-do-page)
 
 
-## Splash Page :door:
+## Splash Page
 <img width="250" src="https://github.com/busramacak/INotes/assets/115944594/879f0401-a868-4d0e-b76b-5023b54a1438" />
 
-## Notes-Add Note Pages :pencil2:
+## Notes-Add Note Pages
 <img width="250" src="https://github.com/busramacak/INotes/assets/115944594/8852275d-54a0-46c8-9ca4-211b9282a1d1" />
 
-## Search Page :mag:
+## Search Page
 <img width="250" src="https://github.com/busramacak/INotes/assets/115944594/32179eae-f4d6-4d7b-a1ca-4a2962320f2c" />
 
-## Favorites Page :heart:
+## Favorites Page
 <img width="250" src="https://github.com/busramacak/INotes/assets/115944594/a066e8a8-da58-4382-8aa5-063aacc280bf" />
 
-## To-Do Page :heavy_check_mark:
+## To-Do Page
 <img width="250" src="https://github.com/busramacak/INotes/assets/115944594/4241058c-f71a-4af4-be91-ae76efeaa97f" />
 
