@@ -43,6 +43,12 @@ class NotesDAO {
         db.close()
     }
 
+    fun deleteNotes(dh:DataBaseHelper){
+        val db=dh.writableDatabase
+
+        db.delete("Notes",null,null)
+        db.close()
+    }
     @SuppressLint("Range")
     fun getNotes(dh: DataBaseHelper):ArrayList<Note>{
         val noteList=ArrayList<Note>()

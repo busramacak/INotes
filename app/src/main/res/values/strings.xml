@@ -8,8 +8,16 @@
     <string name="toDoTitle">To-Do List</string>
     <string name="toDoName">To-Do Name</string>
     <string name="okButton">OK</string>
+
+    <string name="settingsTitle">Settings</string>
+    <string name="languageOption">Preferred Language</string>
+    <string name="modeOption">Preferred Theme</string>
+    <string name="switchDark">Dark Theme</string>
+    <string name="switchLight">Light Theme</string>
+    <string name="deleteAllNotes">Delete All Notes</string>
     <string name="searchViewHint">Search Notes</string>
     <string name="noteAddedYetText">No notes added yet</string>
     <string name="favAddedYetText">No favorites added yet</string>
     <string name="toDoAddedYetText">to-do hasn\'t been added yet</string>
+    <string name="deleteSuccessfull">all notes have been deleted successfully</string>
 </resources>

@@ -33,6 +33,17 @@
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->noteDesign.settingClick()}"
+                android:layout_gravity="end"
+                android:src="@drawable/setting"
+                android:background="@null"
+                android:padding="10dp"/>
+
+
+
         </androidx.appcompat.widget.Toolbar>
 
         <androidx.recyclerview.widget.RecyclerView

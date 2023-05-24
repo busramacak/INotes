@@ -1,5 +1,6 @@
 package com.bmprj.inotes
 
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,6 +33,9 @@ class NoteFragment : Fragment() {
         super.onPause()
 
         list.clear()
+    }
+    fun settingClick(){
+        startActivity(Intent(context,SettingsActivity::class.java))
     }
 
 
