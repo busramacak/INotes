@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">I Notes</string>
+    <string name="noteTitle">Notlar</string>
+    <string name="addNoteTitle">Başlık</string>
+    <string name="addNoteNote">Notlar</string>
+    <string name="saveButton">KAYDET</string>
+    <string name="favTitle">Favoriler</string>
+    <string name="toDoTitle">Yapılacaklar Listesi</string>
+    <string name="toDoName">Yapılacak Görev Adı</string>
+    <string name="okButton">TAMAM</string>
+    <string name="searchViewHint">Notları Ara</string>
+
+    <string name="noteAddedYetText">Henüz not eklenmemiş</string>
+    <string name="toDoAddedYetText">Henüz to-do eklenmemiş</string>
+    <string name="favAddedYetText">Henüz favori eklenmemiş</string>
+</resources>

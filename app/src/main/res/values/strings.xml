@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">I Notes</string>
+    <string name="noteTitle">Notes</string>
+    <string name="addNoteTitle">Title</string>
+    <string name="addNoteNote">Notes</string>
+    <string name="saveButton">SAVE</string>
+    <string name="favTitle">Favorites</string>
+    <string name="toDoTitle">To-Do List</string>
+    <string name="toDoName">To-Do Name</string>
+    <string name="okButton">OK</string>
+    <string name="searchViewHint">Search Notes</string>
+    <string name="noteAddedYetText">No notes added yet</string>
+    <string name="favAddedYetText">No favorites added yet</string>
+    <string name="toDoAddedYetText">to-do hasn\'t been added yet</string>
+</resources>

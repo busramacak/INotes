@@ -39,7 +39,7 @@
                 android:layout_marginEnd="30dp"
                 android:padding="5dp"
                 android:background="@null"
-                android:hint="Title"
+                android:hint="@string/addNoteTitle"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
 
@@ -52,7 +52,7 @@
             android:layout_height="0dp"
             android:background="@null"
             android:gravity="top"
-            android:hint="Notes"
+            android:hint="@string/addNoteNote"
             android:padding="10dp"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,7 @@
             android:onClick="@{(v)-> addNoteDesign.saveClick(v)}"
             app:backgroundTint="@null"
             android:padding="15dp"
-            android:text="Save"
+            android:text="@string/saveButton"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

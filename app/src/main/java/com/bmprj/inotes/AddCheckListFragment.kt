@@ -36,7 +36,7 @@ class AddCheckListFragment : Fragment() {
         val editText=dialogLayout.findViewById<EditText>(R.id.alertEdtxt)
 
         alertDialog.setView(dialogLayout)
-        alertDialog.setPositiveButton("OK"){dialogInterface, i->
+        alertDialog.setPositiveButton(R.string.okButton){dialogInterface, i->
 
             val dh = DataBaseHelper(requireContext())
             ChecksDAO().addChecks(dh,editText.text.toString(),0)

@@ -41,7 +41,7 @@
                 android:iconifiedByDefault="false"
                 android:closeIcon="@drawable/close"
                 android:onQueryTextChange="@{() -> searchDesign.onQueryChange(searchView.getQuery().toString())}"
-                android:queryHint="Search Notes"
+                android:queryHint="@string/searchViewHint"
                 android:searchHintIcon="@null"
                 android:searchIcon="@null" />
 
