@@ -22,13 +22,13 @@ class CheckAdapter(private val list:ArrayList<Check>) : RecyclerView.Adapter<Che
                     val db = DataBaseHelper(binding.root.context)
 
                     binding.checkBox.setOnClickListener{
-                        if(binding.checkBox.isChecked==true){
+                        if(binding.checkBox.isChecked){
 
                             ChecksDAO().updateChecks(db,binding.check?.check_id?.toInt(),1)
 
 
                         }
-                        else if(binding.checkBox.isChecked==false){
+                        else if(!binding.checkBox.isChecked){
 
                             ChecksDAO().updateChecks(db,binding.check?.check_id?.toInt(),0)
                         }

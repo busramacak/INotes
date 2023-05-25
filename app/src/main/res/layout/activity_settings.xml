@@ -6,7 +6,10 @@
     <data>
         <variable
             name="settingsDesign"
-            type="com.bmprj.inotes.SettingsActivity" />
+            type="com.bmprj.inotes.SettingsActivity"/>
+        <variable
+            name="theme"
+            type="com.bmprj.inotes.Theme" />
 
     </data>
 
