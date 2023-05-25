@@ -15,7 +15,7 @@
     <string name="modeOption">Tercih Edilen Tema</string>
     <string name="switchDark">Koyu Tema</string>
     <string name="switchLight">Açık Tema</string>
-    <string name="deleteAllNotes"></string>
+    <string name="deleteAllNotes">Tüm Notları Sil</string>
     <string name="noteAddedYetText">Henüz not eklenmemiş</string>
     <string name="toDoAddedYetText">Henüz to-do eklenmemiş</string>
     <string name="favAddedYetText">Henüz favori eklenmemiş</string>
