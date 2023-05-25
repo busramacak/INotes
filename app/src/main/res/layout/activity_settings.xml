@@ -7,9 +7,6 @@
         <variable
             name="settingsDesign"
             type="com.bmprj.inotes.SettingsActivity"/>
-        <variable
-            name="theme"
-            type="com.bmprj.inotes.Theme" />
 
     </data>
 
@@ -31,7 +28,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="@{(v)->settingsDesign.backClick(v)}"
-                android:src="@drawable/back_white" />
+                android:src="@drawable/back_white"
+                android:contentDescription="TODO"
+                tools:ignore="ContentDescription,HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +57,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,27 +71,30 @@
 
                 <Switch
                     android:id="@+id/switchDark"
-                    android:text="@string/switchDark"
-                    android:onClick="@{(v)->settingsDesign.darkClick(v)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:onClick="@{(v)->settingsDesign.darkClick(v)}"
+                    android:text="@string/switchDark"
+                    tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 
                 <Switch
                     android:id="@+id/switchLight"
-                    android:text="@string/switchLight"
-                    android:onClick="@{(v)->settingsDesign.lightClick(v)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:onClick="@{(v)->settingsDesign.lightClick(v)}"
+                    android:text="@string/switchLight"
+                    tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="@{()->settingsDesign.deleteClick()}"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="30dp"
-                    android:text="@string/deleteAllNotes"/>
+                    android:onClick="@{()->settingsDesign.deleteClick()}"
+                    android:text="@string/deleteAllNotes"
+                    tools:ignore="VisualLintButtonSize,TextContrastCheck" />
 
             </LinearLayout>
 
