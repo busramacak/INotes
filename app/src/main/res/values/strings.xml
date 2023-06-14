@@ -20,4 +20,5 @@
     <string name="favAddedYetText">No favorites added yet</string>
     <string name="toDoAddedYetText">to-do hasn\'t been added yet</string>
     <string name="deleteSuccessfull">all notes have been deleted successfully</string>
+    <string name="titleOrNoteIsNotBlank">Title or notes cannot be left blank if you want to save</string>
 </resources>

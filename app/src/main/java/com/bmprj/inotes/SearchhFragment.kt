@@ -60,7 +60,7 @@ class SearchhFragment : Fragment() {
         }
 
         binding.recyVSearch.apply {
-            layoutManager=GridLayoutManager(context,2)
+            layoutManager=GridLayoutManager(context,context.resources.getInteger(R.integer.grid_column_count))
             binding.recyVSearch.layoutManager=layoutManager
             adapter=NoteAdapter(list)
             binding.recyVSearch.adapter=adapter

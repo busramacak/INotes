@@ -71,7 +71,7 @@ class AddNoteFragment : Fragment() {
 
 
         if(binding.title.text.isEmpty() || binding.noteEdTxt.text.isEmpty()){
-            Toast.makeText(context,"Title or notes cannot be left blank if you want to save",Toast.LENGTH_LONG).show()
+            Toast.makeText(context,context?.resources?.getString(R.string.titleOrNoteIsNotBlank),Toast.LENGTH_LONG).show()
         }
         else{
             if(isUpdate){

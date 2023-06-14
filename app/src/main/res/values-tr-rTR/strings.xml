@@ -20,4 +20,5 @@
     <string name="toDoAddedYetText">Henüz to-do eklenmemiş</string>
     <string name="favAddedYetText">Henüz favori eklenmemiş</string>
     <string name="deleteSuccessfull">Tüm notlar başarıyla silindi</string>
+    <string name="titleOrNoteIsNotBlank">Kaydetmek istiyorsanız başlık veya notlar boş bırakılamaz</string>
 </resources>
