@@ -1,6 +1,6 @@
 # INotes :pencil:
 
-I NOTES is an note and to-do list application written in Kotlin, prepared with SQLite. In the application, there are list of note, list of favorite, search, add note and to-do list.
+I NOTES is a note and to-do list application written in Kotlin, prepared with SQLite. In the application, there are list of note, list of favorite, search, add note and to-do list.
 
 Features:
 + Made with SQlite, Lottie, DataBinding, MVVM architecture, Splash Screen, Recyclerview, Navigation Component(NavGraph, BottomNav), SearchView, Lottie.
@@ -13,6 +13,7 @@ Features:
 + [Search Page:mag:](#search-page)
 + [Favorites Page:heart:](#favorites-page)
 + [To-Do Page:heavy_check_mark:](#to-do-page)
++ [Settings Page :wrench:](#Settings-page)
 
 
 ## Splash Page
@@ -29,4 +30,7 @@ Features:
 
 ## To-Do Page
 <img width="250" src="https://github.com/busramacak/INotes/assets/115944594/4241058c-f71a-4af4-be91-ae76efeaa97f" />
+
+## Settings Page
+  <img width="250" src ="https://github.com/busramacak/INotes/assets/115944594/b5623488-fc72-40f9-8783-429412de09b7" />
 
