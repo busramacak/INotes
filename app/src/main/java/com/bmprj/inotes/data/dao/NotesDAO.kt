@@ -1,11 +1,13 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.data.dao
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import com.bmprj.inotes.data.DataBaseHelper
+import com.bmprj.inotes.model.Note
 
 class NotesDAO {
 
-    fun addNotes(dh: DataBaseHelper, note_title:String, note:String, note_date:String,note_fav:Int){
+    fun addNotes(dh: DataBaseHelper, note_title:String, note:String, note_date:String, note_fav:Int){
         val db = dh.writableDatabase
         val values = ContentValues()
         values.put("note_title",note_title)
@@ -17,7 +19,7 @@ class NotesDAO {
         db.close()
     }
 
-    fun updateNotes(dh:DataBaseHelper,note_id:Int?,note_title: String, note:String, note_date:String){
+    fun updateNotes(dh: DataBaseHelper, note_id:Int?, note_title: String, note:String, note_date:String){
         val db = dh.writableDatabase
         val values = ContentValues()
         values.put("note_title",note_title)
@@ -27,7 +29,7 @@ class NotesDAO {
         db.close()
     }
 
-    fun updateFav(dh:DataBaseHelper,note_id:Int?,note_fav:Int){
+    fun updateFav(dh: DataBaseHelper, note_id:Int?, note_fav:Int){
         val db=dh.writableDatabase
         val values=ContentValues()
         values.put("note_fav",note_fav)
@@ -36,14 +38,14 @@ class NotesDAO {
         db.close()
     }
 
-    fun deleteNotes(dh:DataBaseHelper, note_id: Int?){
+    fun deleteNotes(dh: DataBaseHelper, note_id: Int?){
         val db=dh.writableDatabase
 
         db.delete("Notes","note_id=?", arrayOf(note_id.toString()))
         db.close()
     }
 
-    fun deleteNotes(dh:DataBaseHelper){
+    fun deleteNotes(dh: DataBaseHelper){
         val db=dh.writableDatabase
 
         db.delete("Notes",null,null)

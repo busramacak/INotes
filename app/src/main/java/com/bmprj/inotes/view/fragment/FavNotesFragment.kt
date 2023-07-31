@@ -1,4 +1,4 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,20 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bmprj.inotes.R
+import com.bmprj.inotes.adapter.FavAdapter
 import com.bmprj.inotes.databinding.FragmentFavNotesBinding
+import com.bmprj.inotes.viewmodel.FavNoteViewModel
 
 
 class FavNotesFragment : Fragment() {
     private lateinit var binding:FragmentFavNotesBinding
-    val list = ArrayList<Note>()
+    private val adapter = FavAdapter(arrayListOf())
+    private lateinit var viewModel: FavNoteViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
 
-        binding=DataBindingUtil.inflate(inflater,R.layout.fragment_fav_notes, container, false)
+        binding=DataBindingUtil.inflate(inflater, R.layout.fragment_fav_notes, container, false)
         binding.favDesign=this
         return binding.root
     }
@@ -37,24 +42,24 @@ class FavNotesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val dh = DataBaseHelper(requireContext())
-        val favNoteList = NotesDAO().getNotes(dh)
+        viewModel = ViewModelProvider(this)[FavNoteViewModel::class.java]
 
-        for(i in favNoteList){
-            if(i.note_fav==1){
-                list.add(i)
+        binding.recyVFav.layoutManager=GridLayoutManager(context,resources.getInteger(R.integer.grid_column_count))
+        binding.recyVFav.adapter=adapter
+
+        viewModel.refresh(requireContext())
+
+        observeLiveData()
+    }
+
+    private fun observeLiveData(){
+        viewModel.note.observe(viewLifecycleOwner){note ->
+            note?.let{
+                adapter.updateList(note)
             }
-        }
-
-        if(!list.isEmpty()){
-            binding.favTxt.text=""
-        }
-
-        binding.recyVFav.apply {
-            layoutManager=GridLayoutManager(context,resources.getInteger(R.integer.grid_column_count))
-            binding.recyVFav.layoutManager=layoutManager
-            adapter=FavAdapter(list)
-            binding.recyVFav.adapter=adapter
+            if(!note.isEmpty()){
+                binding.favTxt.text=""
+            }
         }
     }
 

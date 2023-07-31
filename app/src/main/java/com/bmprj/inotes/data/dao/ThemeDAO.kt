@@ -1,11 +1,13 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.data.dao
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import com.bmprj.inotes.data.DataBaseHelper
+import com.bmprj.inotes.model.Theme
 
 class ThemeDAO {
 
-    fun addTheme(dh:DataBaseHelper, theme_is_dark:Int,theme_id: Int){
+    fun addTheme(dh: DataBaseHelper, theme_is_dark:Int, theme_id: Int){
         val db = dh.writableDatabase
         val values = ContentValues()
         values.put("theme_is_dark",theme_is_dark)
@@ -15,7 +17,7 @@ class ThemeDAO {
         db.close()
     }
 
-    fun updateTheme(dh:DataBaseHelper,theme_is_dark: Int, theme_id:Int){
+    fun updateTheme(dh: DataBaseHelper, theme_is_dark: Int, theme_id:Int){
         val db=dh.writableDatabase
         val values=ContentValues()
         values.put("theme_is_dark",theme_is_dark)
@@ -24,13 +26,13 @@ class ThemeDAO {
     }
 
     @SuppressLint("Range")
-    fun getTheme(dh:DataBaseHelper):ArrayList<Theme>{
+    fun getTheme(dh: DataBaseHelper):ArrayList<Theme>{
         val themeList=ArrayList<Theme>()
         val db=dh.writableDatabase
         val cursor=db.rawQuery("SELECT * FROM Theme",null)
 
         while(cursor.moveToNext()){
-            val theme=Theme(cursor.getInt(cursor.getColumnIndex("theme_is_dark")),
+            val theme= Theme(cursor.getInt(cursor.getColumnIndex("theme_is_dark")),
             cursor.getInt(cursor.getColumnIndex("theme_id")))
 
             themeList.add(theme)

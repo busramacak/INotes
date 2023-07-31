@@ -1,7 +1,5 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.view.activity
 
-import android.app.Activity
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.bmprj.inotes.R
 import com.bmprj.inotes.databinding.ActivityMainBinding
 
 
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding=DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.mainTasarim=this
 
 
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             if( nd.id== R.id.addNoteFragment || nd.id == R.id.searchhFragment){
                 binding.bottomNav.visibility= View.GONE
             }
-            else if(nd.id == R.id.noteFragment || nd.id == R.id.favNotesFragment ){
+            else if(nd.id == R.id.noteFragment || nd.id == R.id.favNotesFragment){
                 binding.bottomNav.visibility=View.VISIBLE
             }
         }

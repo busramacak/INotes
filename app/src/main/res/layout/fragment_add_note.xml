@@ -6,14 +6,14 @@
     <data>
         <variable
             name="addNoteDesign"
-            type="com.bmprj.inotes.AddNoteFragment" />
+            type="com.bmprj.inotes.view.fragment.AddNoteFragment" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AddNoteFragment">
+        tools:context=".view.fragment.AddNoteFragment">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -29,7 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="@{(v)->addNoteDesign.backClick(v)}"
-                android:src="@drawable/back"/>
+                android:src="@drawable/back"
+                android:importantForAccessibility="no" />
 
             <EditText
                 android:id="@+id/title"
@@ -41,7 +42,8 @@
                 android:background="@null"
                 android:hint="@string/addNoteTitle"
                 android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:importantForAutofill="no" />
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -57,7 +59,8 @@
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/button"

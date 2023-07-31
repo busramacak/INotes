@@ -1,18 +1,25 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.bmprj.inotes.data.DataBaseHelper
+import com.bmprj.inotes.data.dao.NotesDAO
+import com.bmprj.inotes.R
 import com.bmprj.inotes.databinding.NotesLayoutBinding
+import com.bmprj.inotes.model.Note
+import com.bmprj.inotes.view.fragment.FavNotesFragmentDirections
 
+@Suppress("NAME_SHADOWING")
 class FavAdapter(private val list:ArrayList<Note>)
     :RecyclerView.Adapter<FavAdapter.ViewHolder>() {
 
         class ViewHolder(private val binding:NotesLayoutBinding)
             :RecyclerView.ViewHolder(binding.root){
 
-                fun bind(note:Note?){
+                fun bind(note: Note?){
                     binding.note=note
                     binding.executePendingBindings()
 
@@ -37,7 +44,7 @@ class FavAdapter(private val list:ArrayList<Note>)
                         val note_id=binding.note?.note_id
                         val title = binding.note?.note_title
                         val note = binding.note?.note
-                        val gecis = FavNotesFragmentDirections.noteGoToAddNote(note_id,title,note)
+                        val gecis = FavNotesFragmentDirections.noteGoToAddNote(note_id, title, note)
                         Navigation.findNavController(itemView).navigate(gecis)
                     }
                 }
@@ -57,5 +64,12 @@ class FavAdapter(private val list:ArrayList<Note>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(list[position])
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateList(newList:ArrayList<Note>){
+        list.clear()
+        list.addAll(newList)
+        notifyDataSetChanged()
     }
 }

@@ -1,4 +1,4 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.view.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,13 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
 import androidx.appcompat.app.AppCompatDelegate
+import com.bmprj.inotes.R
+import com.bmprj.inotes.data.DataBaseHelper
+import com.bmprj.inotes.data.dao.ThemeDAO
 import kotlinx.coroutines.*
 
 @Suppress("DEPRECATION")
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
     val cs = CoroutineScope(Dispatchers.Main)
-    val dh=DataBaseHelper(this)
+    val dh= DataBaseHelper(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
@@ -51,7 +54,7 @@ class SplashScreen : AppCompatActivity() {
 
         cs.launch {
             delay(3000)
-            startActivity(Intent(this@SplashScreen,MainActivity::class.java))
+            startActivity(Intent(this@SplashScreen, MainActivity::class.java))
             finish()
         }
 

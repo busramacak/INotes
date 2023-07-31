@@ -1,24 +1,28 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.view.fragment
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
-import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bmprj.inotes.R
+import com.bmprj.inotes.adapter.CheckAdapter
 import com.bmprj.inotes.databinding.FragmentAddCheckListBinding
+import com.bmprj.inotes.model.Check
+import com.bmprj.inotes.viewmodel.CheckViewModel
 
 class AddCheckListFragment : Fragment() {
 
     private lateinit var binding: FragmentAddCheckListBinding
+    private lateinit var viewModel: CheckViewModel
+    private val adapter = CheckAdapter(arrayListOf())
     var list = ArrayList<Check>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,10 +40,11 @@ class AddCheckListFragment : Fragment() {
         val editText=dialogLayout.findViewById<EditText>(R.id.alertEdtxt)
 
         alertDialog.setView(dialogLayout)
-        alertDialog.setPositiveButton(R.string.okButton){dialogInterface, i->
+        alertDialog.setPositiveButton(R.string.okButton){ _,_->
 
-            val dh = DataBaseHelper(requireContext())
-            ChecksDAO().addChecks(dh,editText.text.toString(),0)
+            viewModel.addCheck(requireContext(),editText.text.toString())
+
+
             Navigation.findNavController(view).navigate(R.id.addCheckListFragment)
         }
         alertDialog.show()
@@ -59,26 +64,30 @@ class AddCheckListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel = ViewModelProvider(this)[CheckViewModel::class.java]
 
-        val dh = DataBaseHelper(requireContext())
-        val checkList = ChecksDAO().getChecks(dh)
+        binding.recyVToDo.layoutManager=LinearLayoutManager(context)
+        binding.recyVToDo.adapter=adapter
+
+        viewModel.refresh(requireContext())
 
 
-        for(i in checkList){
-            list.add(i)
+
+        observeLiveData()
+
+    }
+
+    private fun observeLiveData(){
+        viewModel.check.observe(viewLifecycleOwner){check->
+            check?.let{
+                adapter.updateList(check)
+            }
+
+            if(!check.isEmpty()){
+                binding.checkTxt.text=""
+            }
+
         }
-
-        if(!list.isEmpty()){
-            binding.checkTxt.text=""
-        }
-
-        binding.recyVToDo.apply {
-            layoutManager=LinearLayoutManager(context)
-            binding.recyVToDo.layoutManager=layoutManager
-            adapter=CheckAdapter(list)
-            binding.recyVToDo.adapter=adapter
-        }
-
     }
 
 }

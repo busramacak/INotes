@@ -6,14 +6,14 @@
     <data>
         <variable
             name="noteDesign"
-            type="com.bmprj.inotes.NoteFragment" />
+            type="com.bmprj.inotes.view.fragment.NoteFragment" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".NoteFragment">
+        tools:context=".view.fragment.NoteFragment">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -40,7 +40,8 @@
                 android:layout_gravity="end"
                 android:src="@drawable/setting"
                 android:background="@null"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:importantForAccessibility="no" />
 
 
 

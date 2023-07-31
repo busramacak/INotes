@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <variable
             name="note"
-            type="com.bmprj.inotes.Note" />
+            type="com.bmprj.inotes.model.Note" />
 
     </data>
 
@@ -39,7 +39,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_margin="7dp"
-                android:src="@drawable/delete" />
+                android:src="@drawable/delete"
+                android:importantForAccessibility="no" />
 
             <TextView
                 android:id="@+id/title"
@@ -50,7 +51,8 @@
                 android:textColor="@color/textColor"
                 android:text="@{note.note_title, default = DataBinding}"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap" />
 
             <TextView
                 android:id="@+id/date"

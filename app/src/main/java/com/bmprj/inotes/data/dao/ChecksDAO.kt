@@ -1,11 +1,13 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.data.dao
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import com.bmprj.inotes.data.DataBaseHelper
+import com.bmprj.inotes.model.Check
 
 class ChecksDAO {
 
-    fun addChecks(dh:DataBaseHelper, check_text:String, is_checked:Int){
+    fun addChecks(dh: DataBaseHelper, check_text:String, is_checked:Int){
         val db = dh.writableDatabase
         val values = ContentValues()
         values.put("check_text",check_text)
@@ -15,7 +17,7 @@ class ChecksDAO {
         db.close()
     }
 
-    fun updateChecks(dh:DataBaseHelper,check_id:Int?,is_checked: Int){
+    fun updateChecks(dh: DataBaseHelper, check_id:Int?, is_checked: Int){
         val db = dh.writableDatabase
         val values = ContentValues()
 
@@ -25,7 +27,7 @@ class ChecksDAO {
         db.close()
     }
 
-    fun deleteChecks(dh:DataBaseHelper,check_id:Int?){
+    fun deleteChecks(dh: DataBaseHelper, check_id:Int?){
         val db = dh.writableDatabase
 
         db.delete("Checks","check_id=?", arrayOf(check_id.toString()))
@@ -34,7 +36,7 @@ class ChecksDAO {
     }
 
     @SuppressLint("Range")
-    fun getChecks(dh:DataBaseHelper):ArrayList<Check>{
+    fun getChecks(dh: DataBaseHelper):ArrayList<Check>{
         val checkList = ArrayList<Check>()
         val db = dh.writableDatabase
         val cursor = db.rawQuery("SELECT * FROM Checks",null)

@@ -1,4 +1,4 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.data
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

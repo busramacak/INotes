@@ -1,15 +1,15 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.adapter
 
-import android.R.string
-import android.text.Spanned
-import android.text.style.StrikethroughSpan
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.text.toSpannable
-import androidx.core.text.toSpanned
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.bmprj.inotes.data.dao.ChecksDAO
+import com.bmprj.inotes.data.DataBaseHelper
+import com.bmprj.inotes.R
 import com.bmprj.inotes.databinding.CheckListLayoutBinding
+import com.bmprj.inotes.model.Check
 
 
 class CheckAdapter(private val list:ArrayList<Check>) : RecyclerView.Adapter<CheckAdapter.ViewHolder>(){
@@ -32,12 +32,12 @@ class CheckAdapter(private val list:ArrayList<Check>) : RecyclerView.Adapter<Che
 
                             ChecksDAO().updateChecks(db,binding.check?.check_id?.toInt(),0)
                         }
-                        Navigation.findNavController(itemView).navigate(com.bmprj.inotes.R.id.addCheckListFragment)
+                        Navigation.findNavController(itemView).navigate(R.id.addCheckListFragment)
                     }
 
                     binding.deleteCheck.setOnClickListener{
                         ChecksDAO().deleteChecks(db,binding.check?.check_id?.toInt())
-                        Navigation.findNavController(itemView).navigate(com.bmprj.inotes.R.id.addCheckListFragment)
+                        Navigation.findNavController(itemView).navigate(R.id.addCheckListFragment)
                     }
 
                 }
@@ -58,6 +58,13 @@ class CheckAdapter(private val list:ArrayList<Check>) : RecyclerView.Adapter<Che
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(list[position])
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateList(newList:ArrayList<Check>){
+        list.clear()
+        list.addAll(newList)
+        notifyDataSetChanged()
     }
 
 }

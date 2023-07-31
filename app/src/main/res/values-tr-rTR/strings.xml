@@ -9,6 +9,9 @@
     <string name="toDoTitle">Yapılacaklar Listesi</string>
     <string name="toDoName">Yapılacak Görev Adı</string>
     <string name="okButton">TAMAM</string>
+    <string name="areYouSure">Emin misin?</string>
+    <string name="delete">Sil</string>
+    <string name="noDel">Vazgeç</string>
     <string name="searchViewHint">Notları Ara</string>
     <string name="settingsTitle">Ayarlar</string>
     <string name="languageOption">Tercih Edilen Dil</string>

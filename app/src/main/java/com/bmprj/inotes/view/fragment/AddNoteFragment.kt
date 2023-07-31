@@ -1,4 +1,4 @@
-package com.bmprj.inotes
+package com.bmprj.inotes.view.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,19 +9,20 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.NavArgs
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
+import com.bmprj.inotes.R
 import com.bmprj.inotes.databinding.FragmentAddNoteBinding
-import java.text.SimpleDateFormat
+import com.bmprj.inotes.viewmodel.AddNoteViewModel
 import java.util.*
 
 
 class AddNoteFragment : Fragment() {
     private lateinit var binding: FragmentAddNoteBinding
+    private lateinit var viewModel: AddNoteViewModel
     var isUpdate=false
-    val bundle:AddNoteFragmentArgs by navArgs()
+    val bundle: AddNoteFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +40,11 @@ class AddNoteFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this)[AddNoteViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,21 +70,19 @@ class AddNoteFragment : Fragment() {
     @SuppressLint("ResourceAsColor")
     fun saveClick(view: View){
 
-        val dh = DataBaseHelper(requireContext())
-        val date = Calendar.getInstance().time
-        val formatter = SimpleDateFormat("dd MMM yy")
-        val current = formatter.format(date).toString()
 
 
         if(binding.title.text.isEmpty() || binding.noteEdTxt.text.isEmpty()){
             Toast.makeText(context,context?.resources?.getString(R.string.titleOrNoteIsNotBlank),Toast.LENGTH_LONG).show()
         }
         else{
+
+
             if(isUpdate){
-                NotesDAO().updateNotes(dh, bundle.noteId?.toInt(), binding.title.text.toString(), binding.noteEdTxt.text.toString(), current)
+                viewModel.update(requireContext(), bundle.noteId?.toInt(), binding.title.text.toString(), binding.noteEdTxt.text.toString())
             }
             else if(!isUpdate){
-                NotesDAO().addNotes(dh,binding.title.text.toString(), binding.noteEdTxt.text.toString(),current,0)
+                viewModel.add(requireContext(),binding.title.text.toString(), binding.noteEdTxt.text.toString())
             }
             Navigation.findNavController(view).navigate(R.id.addNoteGoToNote)
         }

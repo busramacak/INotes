@@ -12,10 +12,10 @@
         android:theme="@style/Theme.INotes.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".view.activity.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".view.activity.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.activity.MainActivity"
             android:exported="false" />
     </application>
 

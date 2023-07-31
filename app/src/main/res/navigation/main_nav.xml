@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/searchhFragment"
-        android:name="com.bmprj.inotes.SearchhFragment"
+        android:name="com.bmprj.inotes.view.fragment.SearchhFragment"
         android:label="SearchhFragment"
         tools:layout="@layout/fragment_searchh">
 
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/addNoteFragment"
-        android:name="com.bmprj.inotes.AddNoteFragment"
+        android:name="com.bmprj.inotes.view.fragment.AddNoteFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add_note" >
         <action
@@ -52,13 +52,13 @@
 
     <fragment
         android:id="@+id/addCheckListFragment"
-        android:name="com.bmprj.inotes.AddCheckListFragment"
+        android:name="com.bmprj.inotes.view.fragment.AddCheckListFragment"
         android:label="AddCheckListFragment"
         tools:layout="@layout/fragment_add_check_list"/>
 
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.bmprj.inotes.NoteFragment"
+        android:name="com.bmprj.inotes.view.fragment.NoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note">
         <action
@@ -68,7 +68,7 @@
 
     <fragment
         android:id="@+id/favNotesFragment"
-        android:name="com.bmprj.inotes.FavNotesFragment"
+        android:name="com.bmprj.inotes.view.fragment.FavNotesFragment"
         android:label="fragment_fav_notes"
         tools:layout="@layout/fragment_fav_notes">
         <action

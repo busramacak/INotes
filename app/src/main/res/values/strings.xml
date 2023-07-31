@@ -9,6 +9,10 @@
     <string name="toDoName">To-Do Name</string>
     <string name="okButton">OK</string>
 
+    <string name="areYouSure">Are you sure ?</string>
+    <string name="delete">Delete</string>
+    <string name="noDel">Cancel</string>
+
     <string name="settingsTitle">Settings</string>
     <string name="languageOption">Preferred Language</string>
     <string name="modeOption">Preferred Theme</string>

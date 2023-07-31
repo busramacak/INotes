@@ -6,14 +6,14 @@
     <data>
         <variable
             name="favDesign"
-            type="com.bmprj.inotes.FavNotesFragment" />
+            type="com.bmprj.inotes.view.fragment.FavNotesFragment" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FavNotesFragment">
+        tools:context=".view.fragment.FavNotesFragment">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar1"

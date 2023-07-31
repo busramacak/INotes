@@ -6,14 +6,14 @@
     <data>
         <variable
             name="settingsDesign"
-            type="com.bmprj.inotes.SettingsActivity"/>
+            type="com.bmprj.inotes.view.activity.SettingsActivity"/>
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SettingsActivity">
+        tools:context=".view.activity.SettingsActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -27,7 +27,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="@{(v)->settingsDesign.backClick(v)}"
+                android:onClick="@{()->settingsDesign.backClick()}"
                 android:src="@drawable/back_white"
                 android:contentDescription="TODO"
                 tools:ignore="ContentDescription,HardcodedText" />
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:onClick="@{(v)->settingsDesign.darkClick(v)}"
+                    android:onClick="@{()->settingsDesign.darkClick()}"
                     android:text="@string/switchDark"
                     tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 
@@ -83,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:onClick="@{(v)->settingsDesign.lightClick(v)}"
+                    android:onClick="@{()->settingsDesign.lightClick()}"
                     android:text="@string/switchLight"
                     tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 

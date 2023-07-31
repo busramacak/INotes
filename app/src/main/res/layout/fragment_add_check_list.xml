@@ -7,13 +7,13 @@
     <data>
         <variable
             name="addCheckListDesign"
-            type="com.bmprj.inotes.AddCheckListFragment" />
+            type="com.bmprj.inotes.view.fragment.AddCheckListFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AddCheckListFragment">
+        tools:context=".view.fragment.AddCheckListFragment">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -50,13 +50,13 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="@{(v)->addCheckListDesign.floatBtnClick(v)}"
+            android:src="@drawable/add"
+            app:backgroundTint="@color/red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:onClick="@{(v)->addCheckListDesign.floatBtnClick(v)}"
-            android:layout_margin="20dp"
-            app:backgroundTint="@color/red"
-            app:tint="@color/white"
-            android:src="@drawable/add"/>
+            app:tint="@color/white" />
 
         <TextView
             android:id="@+id/check_txt"
