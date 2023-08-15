@@ -1,9 +1,11 @@
 # INotes :pencil:
 
+[I Notes Live on Google Play!!!](https://play.google.com/store/apps/details?id=com.bmprj.inotes)
+
 I NOTES is a note and to-do list application written in Kotlin, prepared with SQLite. In the application, there are list of note, list of favorite, search, add note and to-do list.
 
 Features:
-+ Made with SQlite, Lottie, DataBinding, MVVM architecture, Splash Screen, Recyclerview, Navigation Component(NavGraph, BottomNav), SearchView.
++ Made with SQlite, Lottie, DataBinding, MVVM architecture(Model, View, ModelView), LiveData, Splash Screen, Recyclerview, Navigation Component(NavGraph, BottomNav), SearchView.
 + Compatible with portrait mode and landspace mode, dark and light mode.
 + Notes,Favorites,Add note, search, to-do screens are using Navigation Component.
 
