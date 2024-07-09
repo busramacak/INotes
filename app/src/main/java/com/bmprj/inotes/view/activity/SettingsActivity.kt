@@ -92,7 +92,7 @@ class SettingsActivity : AppCompatActivity() {
     fun deleteClick(){
 
         val dialogClickListener =
-            DialogInterface.OnClickListener { dialog, which ->
+            DialogInterface.OnClickListener { _, which ->
                 when (which) {
                     DialogInterface.BUTTON_POSITIVE -> {
                         viewModel.deleteAllNotes(dh,this)
